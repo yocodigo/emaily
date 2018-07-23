@@ -7,7 +7,10 @@ require("./models/User");
 require("./services/passport"); /*condensed because we don't need to assign anything from passport.js, 
 we just need to make sure it runs */
 
-mongoose.connect(keys.mongoURI, { useNewUrlParser: true });
+mongoose.connect(
+  keys.mongoURI,
+  { useNewUrlParser: true }
+);
 
 const app = express();
 

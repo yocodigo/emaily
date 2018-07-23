@@ -24,14 +24,10 @@ passport.use(
       proxy: true
     },
     (accessToken, refreshToken, profile, done) => {
-      // console.log('access token', accessToken);
-      // console.log('profile', profile);
-      // new User({ googleId: profile.id }).save().then(user => done(null, user));
 
       User.findOne({ loginId: profile.id }).then(existingUser => {
         if (existingUser) {
           // we already have a record with the given profile ID
-          // console.log(existingUser);
           done(null, existingUser);
         } else {
           // we don't have a user record with this ID, make a new record
