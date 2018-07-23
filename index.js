@@ -24,7 +24,6 @@ app.use(passport.session());
 require("./routes/authRoutes")(app);
 
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, function(req, res) {
-  res.send('Hello World!');
+app.listen(PORT, function() {
   console.log("express is working on port " + PORT);
 });
