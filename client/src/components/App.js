@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
+import { connect } from 'react-redux';
+import * as actions from  '../actions';
 
 import Header from './Header';
 const Dashboard = () => <h2>Dashboard</h2>
@@ -12,7 +14,7 @@ class App extends Component { /* Refactor from functional component to stateful 
 If the header were the only component that cared about whether the user was logged in or not, we would add the action creator there but in this app
 other components also have use for it.*/
     componentDidMount() {
-
+        this.props.fetchUser();
     }
     
     render() {
@@ -31,4 +33,4 @@ other components also have use for it.*/
     }    
 };
 
-export default App;
+export default connect(null, actions)(App);
