@@ -9,7 +9,7 @@ import { FETCH_USER } from './types';
 //     };
 // };
 
-//REFACTORED from ^^^
+// REFACTORED from ^^^
 export const fetchUser = () => async dispatch => {
     const res = await axios.get("/api/current_user"); // Request is then made
     
