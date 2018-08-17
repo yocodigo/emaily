@@ -5,10 +5,16 @@ class Payments extends Component {
     render() {
         return (
             <StripeCheckout
+                name="Emaily"
+                description="$5 for 5 email credits"
                 amount={500}
                 token={token => console.log(token)}
                 stripeKey={process.env.REACT_APP_STRIPE_KEY}
-            />
+            >
+                <button style={{backgroundColor:"rgb(69, 244, 66)", color: "#000"}} className="btn">
+                    Add Credits
+                </button>
+            </StripeCheckout>
         );
     }
 }

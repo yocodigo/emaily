@@ -3,26 +3,22 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import Payments from "./Payments";
 
-const styles = {
-  color: "blue"
-}
-
 class Header extends Component {
   renderContent() {
     switch (this.props.auth) {
       case null:
-        return;
+        return; {/*Dont do anything*/}
       case false:
         return (
           <li>
-            <a href="/auth/google">Login With Google</a>
+            <a href="/auth/google">Login With Google</a> {/*If user is not logged in, render text in header*/}
           </li>
         );
       default:
         return [
-          <li> <Payments /> </li>, 
-          <li>
-            <a href="/api/logout">Logout</a>
+          <li key="1"> <Payments /> </li>, 
+          <li key="2">
+            <a href="/api/logout">Logout</a> {/*If user is logged in, render 'Logout' in header*/}
           </li>
         ];
     }
