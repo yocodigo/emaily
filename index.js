@@ -1,7 +1,9 @@
-const cookieSession = require("cookie-session");
+// Express middlewares are wired up to express using app.use
+const cookieSession = require("cookie-session"); // Express middleware
 const express = require("express");
 const mongoose = require("mongoose");
-const passport = require("passport");
+const passport = require("passport"); // Express middleware
+const bodyParser = require("body-parser"); // Express middleware
 const keys = require("./config/keys");
 require("./models/User");
 require("./services/passport"); /*condensed because we don't need to assign anything from passport.js, 
@@ -14,6 +16,7 @@ mongoose.connect(
 
 const app = express();
 
+app.use(bodyParser.json());
 app.use(
   cookieSession({
     maxAge: 30 * 24 * 60 * 60 * 1000,
