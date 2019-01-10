@@ -16,13 +16,9 @@ module.exports = app => {
     }
   );
 
-  app.get("/",
+  // app.get("/", (req, res) => {
   //   res.send("Hello World!");
   // });
-    passport.authenticate("google", {
-      scope: ["profile", "email"]
-    })
-  );
 
   app.get("/api/logout", (req, res) => {
     req.logout();
@@ -33,17 +29,17 @@ module.exports = app => {
     res.send(req.user);
   });
 
-  app.get(
-    "/auth/facebook",
-    passport.authenticate("facebook", { scope: ["email"] })
-  );
+  // app.get(
+  //   "/auth/facebook",
+  //   passport.authenticate("facebook", { scope: ["email"] })
+  // );
 
-  app.get(
-    "/auth/facebook/callback",
-    passport.authenticate("facebook", { failureRedirect: "/login" }),
-    function(req, res) {
-      // Successful authentication, redirect home.
-      res.redirect("/");
-    }
-  );
+  // app.get(
+  //   "/auth/facebook/callback",
+  //   passport.authenticate("facebook", { failureRedirect: "/login" }),
+  //   function(req, res) {
+  //     // Successful authentication, redirect home.
+  //     res.redirect("/");
+  //   }
+  // );
 };
