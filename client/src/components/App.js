@@ -14,6 +14,7 @@ other components also have use for it.*/
         this.props.fetchUser();
     }
     
+    
     render() {
         return (
             <div>
