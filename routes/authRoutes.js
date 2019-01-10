@@ -16,9 +16,13 @@ module.exports = app => {
     }
   );
 
-  app.get("/", (req, res) => {
-    res.send("Hello World!");
-  });
+  app.get("/",
+  //   res.send("Hello World!");
+  // });
+    passport.authenticate("google", {
+      scope: ["profile", "email"]
+    })
+  );
 
   app.get("/api/logout", (req, res) => {
     req.logout();
