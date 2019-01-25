@@ -6,6 +6,7 @@ const passport = require("passport"); // Express middleware
 const bodyParser = require("body-parser"); // Express middleware used whenever there is a POST/PUT/PATCH request from the frontend or anything else that has a req.body
 const keys = require("./config/keys");
 require("./models/User");
+require("./models/Survey");
 require("./services/passport"); /*condensed because we don't need to assign anything from passport.js, 
 we just need to make sure it runs */
 
@@ -29,6 +30,7 @@ app.use(passport.session());
 
 require("./routes/authRoutes")(app);
 require("./routes/billingRoutes")(app);
+require("./routes/surveyRoutes")(app);
 
 if (process.env.NODE_ENV === 'production') {
   // Express will serve up production assets
