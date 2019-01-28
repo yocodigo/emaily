@@ -5,7 +5,7 @@ import * as actions from  '../actions';
 import Landing from './Landing';
 import Header from './Header';
 import Dashboard from './Dashboard';
-const SurveyNew = () => <h2>SurveyNew</h2>
+import SurveyNew from './surveys/SurveyNew';
 
 class App extends Component { /* Refactor from functional component to stateful component in order to centralize the use of our action creator. 
 If the header were the only component that cared about whether the user was logged in or not, we would add the action creator there but in this app
