@@ -14,19 +14,16 @@ other components also have use for it.*/
         this.props.fetchUser();
     }
     
-    
     render() {
-        return (
-            <div>
+        return (        
                 <BrowserRouter>
-                    <div>
+                    <div className="container">
                         <Header />
                         <Route exact path="/" component={Landing} /> {/* exact is the same as exact={true} */} 
                         <Route exact path="/surveys" component={Dashboard} />
                         <Route path="/surveys/new" component={SurveyNew} />
                     </div>
-                </BrowserRouter>
-            </div>
+                </BrowserRouter>            
         );
     }    
 };
